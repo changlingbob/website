@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "es2022",
+    "lib": ["esnext", "dom"],
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "./www/",
+    "noEmit": false,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@theme/*": ["src/theme/*"],
+      "@pages": ["src/pages/*"],
+      "@renderer/*": ["src/renderer/*"],
+      "@components/*": ["src/components/*"]
+    }
+  },
+  "files": ["./src/index.tsx"],
+  "include": ["src/**/*", "node_modules/@types/jest"]
+}

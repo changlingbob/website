@@ -1,0 +1,1 @@
+import{jsxs as n,Fragment as e,jsx as r}from"react/jsx-runtime";const h=({is404:o})=>o?n(e,{children:[r("h1",{children:"404 Page Not Found"}),r("p",{children:"This page could not be found."})]}):n(e,{children:[r("h1",{children:"500 Internal Error"}),r("p",{children:"Something went wrong."})]});export{h as Page};
