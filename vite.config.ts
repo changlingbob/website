@@ -16,7 +16,7 @@ export default ({ mode }) => {
       ssr({ prerender: { noExtraDir: true } }),
     ],
     build: {
-      outDir: '../www',
+      outDir: '../docs',
       minify: !isDevelopment,
     },
     css: {

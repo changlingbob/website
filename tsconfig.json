@@ -5,7 +5,7 @@
     "lib": ["esnext", "dom"],
     "jsx": "react",
     "sourceMap": true,
-    "outDir": "./www/",
+    "outDir": "./docs/",
     "noEmit": false,
     "strict": true,
     "moduleResolution": "node",

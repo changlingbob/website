@@ -1,1 +1,0 @@
-import{jsxs as s,jsx as l}from"react/jsx-runtime";import{b as e,a as o}from"../chunks/chunk-c8aedf3b.js";const c=()=>(console.log("blogs!"),s("div",{className:"hi",children:[l("h1",{children:"blogs!"}),l("li",{children:e.map(r=>l("ul",{children:l("a",{href:`blog/${o(r)}`,children:o(r)})},o(r)))})]}));export{c as Page};

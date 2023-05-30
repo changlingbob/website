@@ -1,1 +1,0 @@
-import{j as o}from"../chunks/chunk-95be5020.js";import{b as t,a as n}from"../chunks/chunk-c8aedf3b.js";const i=({blog:e})=>(console.log(e),o.jsxs(o.Fragment,{children:[o.jsx("div",{children:e.date}),o.jsx("div",{children:e.title}),e.content.map(r=>r)]})),d=e=>({pageContext:{pageProps:{blog:t.find(r=>e.routeParams.id===n(r))}}});export{i as Page,d as onBeforeRender};

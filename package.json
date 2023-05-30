@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.0.1",
   "description": "Powerful Wizard Games website",
-  "main": "www/index.html",
+  "main": "docs/index.html",
   "scripts": {
     "build": "vite build",
     "clear_jest": "jest --clearCache",
