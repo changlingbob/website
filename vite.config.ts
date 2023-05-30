@@ -13,7 +13,7 @@ export default ({ mode }) => {
         exclude: /test/,
         include: [/\*\*\/\*\.tsx?/, '**/*.scss'],
       }),
-      ssr({ prerender: true }),
+      ssr({ prerender: { noExtraDir: true } }),
     ],
     build: {
       outDir: '../www',

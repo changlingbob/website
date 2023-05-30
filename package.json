@@ -16,9 +16,6 @@
     "lint:prettier:fix": "prettier --config .prettierrc.json --write **/*.tsx **/*.ts",
     "lint:stylelint": "stylelint **/*.scss",
     "lint:stylelint:fix": "stylelint **/*.scss --fix",
-    "test": "jest .*\\.test\\..* --coverage",
-    "test:dev": "jest .*\\.test\\..* --watch",
-    "type-check": "tsc -p ./tsconfig.json --noEmit --watch --preserveWatchOutput",
     "start": "vite dev",
     "serve": "vite preview"
   },

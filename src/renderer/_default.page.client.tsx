@@ -17,7 +17,7 @@ export const render = async (pageContext: PageContextClient) => {
   const root = document.getElementById('root');
 
   if (!root) {
-    throw new Error('DOM element #react-root not found');
+    throw new Error('DOM element #root not found');
   }
 
   hydrateRoot(
@@ -27,3 +27,5 @@ export const render = async (pageContext: PageContextClient) => {
     </Shell>
   );
 };
+
+export const clientRouting = true;

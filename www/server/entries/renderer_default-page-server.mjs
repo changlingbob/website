@@ -8,6 +8,6 @@ import{jsxs as a,jsx as o}from"react/jsx-runtime";import l from"react-dom/server
         <title>${s}</title>
       </head>
       <body>
-        <div id="react-root">${p(i)}</div>
+        <div id="root">${p(i)}</div>
       </body>
     </html>`,pageContext:{}}};export{f as passToClient,x as render};

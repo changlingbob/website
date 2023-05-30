@@ -40,7 +40,7 @@ export const render = async (pageContext: PageContextServer) => {
         <title>${title}</title>
       </head>
       <body>
-        <div id="react-root">${dangerouslySkipEscape(pageHtml)}</div>
+        <div id="root">${dangerouslySkipEscape(pageHtml)}</div>
       </body>
     </html>`;
 
