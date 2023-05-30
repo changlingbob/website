@@ -5,6 +5,8 @@ on:
       - master
     paths:
       - www/**
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
