@@ -1,0 +1,33 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - www/**
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout
+
+      - name: Install
+        uses: npm i
+
+      - name: Build website
+        run: npm run build
+
+      - name: Touch nojekyll
+        run: touch www/client/.nojekyll
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: www/client
+          # Remove previous build files
+          clean: true
+          # Do not remove the `.nojekyll` file: we have manually added an empty `.nojekyll` file at the root of the `gh-pages` branch and we don't want having to re-create it after each build.
+          clean-exclude: |
+            .nojekyll
