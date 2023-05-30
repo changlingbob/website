@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout
 
       - name: Install
-        uses: npm i
+        run: npm i
 
       - name: Build website
         run: npm run build
