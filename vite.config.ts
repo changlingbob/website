@@ -27,6 +27,10 @@ export default ({ mode }) => {
     resolve: {
       alias: [
         {
+          find: '@blogs',
+          replacement: path.resolve(__dirname, 'src/blogs'),
+        },
+        {
           find: '@theme',
           replacement: path.resolve(__dirname, 'src/theme'),
         },
