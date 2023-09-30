@@ -2,7 +2,8 @@ coverage/**
 test/**
 node_modules/**
 *.aseprite
-data/assets/aseprite/*
+
+www/**
 
 .node-version
 tools/api-key
