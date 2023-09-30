@@ -1,7 +1,7 @@
 import { IBlog } from './blog.types';
 
 const blogImport: Record<string, { default: IBlog }> = import.meta.glob(
-  '@content/blogs/*',
+  '../../content/blogs/*',
   {
     eager: true,
   }
