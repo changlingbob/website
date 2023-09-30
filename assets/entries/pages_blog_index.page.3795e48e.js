@@ -1,0 +1,1 @@
+import{j as s}from"../chunks/chunk-4d04ce61.js";import{b as o,a as r}from"../chunks/chunk-cb7689e2.js";const a=()=>(console.log("blogs!"),s.jsxs("div",{className:"hi",children:[s.jsx("h1",{children:"blogs!"}),s.jsx("li",{children:o.map(l=>s.jsx("ul",{children:s.jsx("a",{href:`blog/${r(l)}`,children:r(l)})},r(l)))})]}));export{a as Page};
