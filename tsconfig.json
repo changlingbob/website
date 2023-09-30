@@ -15,7 +15,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "paths": {
-      "@blog/*": ["src/blog/*"],
+      "@assets/*": ["src/assets/*"],
+      "@content/*": ["src/content/*"],
       "@theme/*": ["src/theme/*"],
       "@pages": ["src/pages/*"],
       "@renderer/*": ["src/renderer/*"],

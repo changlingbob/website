@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { PageContextBuiltIn } from 'vite-plugin-ssr';
+import { PageContextBuiltIn } from 'vike';
 
 import { IBlog } from '../blog.types';
 import { blogs, blogSlug } from '../content';

@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { ssr } from 'vite-plugin-ssr/plugin';
+import { ssr } from 'vike/plugin';
 import path from 'path';
 
 export default ({ mode }) => {
   const isDevelopment = mode === 'development';
   return defineConfig({
-    base: '/website/',
+    base: isDevelopment ? '/' : '/website/',
     root: 'src',
     mode,
     plugins: [
@@ -28,8 +28,12 @@ export default ({ mode }) => {
     resolve: {
       alias: [
         {
-          find: '@blogs',
-          replacement: path.resolve(__dirname, 'src/blogs'),
+          find: '@assets',
+          replacement: path.resolve(__dirname, 'src/assets'),
+        },
+        {
+          find: '@content',
+          replacement: path.resolve(__dirname, 'src/content'),
         },
         {
           find: '@theme',

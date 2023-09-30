@@ -1,0 +1,11 @@
+.menu {
+  background: orange;
+
+  .header {
+    display: grid;
+
+    button {
+      justify-self: flex-end;
+    }
+  }
+}

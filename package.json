@@ -29,8 +29,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vite-plugin-ssr": "^0.4.142"
+    "vike": "^0.4.142",
+    "vite": "^4.4.9"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",

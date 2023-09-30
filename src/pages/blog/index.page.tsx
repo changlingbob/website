@@ -11,7 +11,7 @@ export const Page: React.FC = () => {
       <li>
         {blogs.map((blog) => (
           <ul key={blogSlug(blog)}>
-            <a href={`/website/blog/${blogSlug(blog)}`}>{blogSlug(blog)}</a>
+            <a href={`blog/${blogSlug(blog)}`}>{blogSlug(blog)}</a>
           </ul>
         ))}
       </li>

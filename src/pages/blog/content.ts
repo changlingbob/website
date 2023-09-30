@@ -1,13 +1,13 @@
 import { IBlog } from './blog.types';
 
-const imports: Record<string, { default: IBlog }> = import.meta.glob(
-  '@blogs/*',
+const blogImport: Record<string, { default: IBlog }> = import.meta.glob(
+  '@content/blogs/*',
   {
     eager: true,
   }
 );
 
-export const blogs = Object.values(imports).map((item) => item.default);
+export const blogs = Object.values(blogImport).map((item) => item.default);
 
 export const blogSlug = (blog: IBlog) =>
   `${blog.date}-${blog.title

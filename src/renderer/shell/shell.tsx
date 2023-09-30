@@ -1,5 +1,10 @@
 import * as React from 'react';
 
+import 'normalize.css';
+
+import { Footer } from '@components/footer/footer';
+import { Header } from '@components/header';
+import { Menu } from '@components/menu';
 import { PageContext } from '@renderer/types';
 
 import styles from './shell.module.scss';
@@ -13,9 +18,10 @@ export const Shell: React.FC<IShellProps> = ({ children, pageContext }) => {
 
   return (
     <div className={styles.content}>
-      TITLE LOL
-      <br />
-      {children}
+      <Header className={styles.header} title={'TITLE LOL'} />
+      <Menu className={styles.menu} />
+      <div className={styles.page}>{children}</div>
+      <Footer className={styles.footer} msg={'footer'} />
     </div>
   );
 };

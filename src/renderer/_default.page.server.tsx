@@ -1,8 +1,8 @@
-// See https://vite-plugin-ssr.com/data-fetching
+// See https://vike.dev/data-fetching
 import * as React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import { dangerouslySkipEscape, escapeInject } from 'vite-plugin-ssr/server';
+import { dangerouslySkipEscape, escapeInject } from 'vike/server';
 
 import { Shell } from './shell';
 import type { PageContextServer } from './types';
@@ -12,7 +12,7 @@ export const passToClient = ['pageProps', 'urlPathname'];
 export const render = async (pageContext: PageContextServer) => {
   const { Page, pageProps } = pageContext;
 
-  // This render() hook only supports SSR, see https://vite-plugin-ssr.com/render-modes for how to modify render() to support SPA
+  // This render() hook only supports SSR, see https://vike.dev/render-modes for how to modify render() to support SPA
   if (!Page) {
     throw new Error('My render() hook expects pageContext.Page to be defined');
   }
@@ -23,12 +23,11 @@ export const render = async (pageContext: PageContextServer) => {
     </Shell>
   );
 
-  // See https://vite-plugin-ssr.com/head
+  // See https://vike.dev.com/head
   const { documentProps } = pageContext.exports;
   const title = (documentProps && documentProps.title) || 'Vite SSR app';
   const desc =
-    (documentProps && documentProps.description) ||
-    'App using Vite + vite-plugin-ssr';
+    (documentProps && documentProps.description) || 'App using Vite + Vike';
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
@@ -47,7 +46,7 @@ export const render = async (pageContext: PageContextServer) => {
   return {
     documentHtml,
     pageContext: {
-      // We can add some `pageContext` here, which is useful if we want to do page redirection https://vite-plugin-ssr.com/page-redirection
+      // We can add some `pageContext` here, which is useful if we want to do page redirection https://vike.dev/page-redirection
     },
   };
 };

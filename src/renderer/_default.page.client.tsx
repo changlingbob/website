@@ -4,7 +4,7 @@ import { hydrateRoot } from 'react-dom/client';
 import { Shell } from './shell';
 import type { PageContextClient } from './types';
 
-// This render() hook only supports SSR, see https://vite-plugin-ssr.com/render-modes for how to modify render() to support SPA
+// This render() hook only supports SSR, see https://vike.dev/render-modes for how to modify render() to support SPA
 export const render = async (pageContext: PageContextClient) => {
   const { Page, pageProps } = pageContext;
 
