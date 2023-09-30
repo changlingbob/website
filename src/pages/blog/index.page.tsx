@@ -18,3 +18,8 @@ export const Page: React.FC = () => {
     </div>
   );
 };
+
+export const documentProps = {
+  title: 'Blog',
+  description: '',
+};

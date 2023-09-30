@@ -5,3 +5,8 @@ export const Page: React.FC = () => {
 
   return <div className={'hi'}>i mak gam</div>;
 };
+
+export const documentProps = {
+  title: 'Gam',
+  description: '',
+};

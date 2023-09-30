@@ -7,6 +7,7 @@ export const prerender = () =>
     return {
       url,
       pageContext: {
+        title: 'hi',
         pageProps: {
           blog,
         },

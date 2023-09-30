@@ -24,8 +24,13 @@ export const render = async (pageContext: PageContextServer) => {
   );
 
   // See https://vike.dev.com/head
-  const { documentProps } = pageContext.exports;
-  const title = (documentProps && documentProps.title) || 'Vite SSR app';
+  const { documentProps, getDocumentProps } = pageContext.exports;
+  const title = `${
+    `${
+      (pageProps && getDocumentProps?.(pageProps).title) || documentProps?.title
+    } - ` || ''
+  }Webbed site`;
+
   const desc =
     (documentProps && documentProps.description) || 'App using Vite + Vike';
 

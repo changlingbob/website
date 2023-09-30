@@ -3,7 +3,11 @@ import type {
   PageContextBuiltInClientWithClientRouting as PageContextBuiltInClient,
 } from 'vike/types';
 
-export type PageProps = Record<string, unknown>;
+import { IBlog } from './blog.types';
+
+export type PageProps = {
+  blog?: IBlog;
+};
 export type Page = (pageProps: PageProps) => React.ReactElement;
 
 export type PageContextCustom = {
@@ -12,6 +16,10 @@ export type PageContextCustom = {
   urlPathname: string;
   exports: {
     documentProps?: {
+      title?: string;
+      description?: string;
+    };
+    getDocumentProps?: (pageProps: PageProps) => {
       title?: string;
       description?: string;
     };

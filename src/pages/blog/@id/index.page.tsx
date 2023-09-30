@@ -1,8 +1,10 @@
 import * as React from 'react';
 
+import { IBlog } from '@renderer/blog.types';
+import { PageProps } from '@renderer/types';
 import { PageContextBuiltIn } from 'vike';
+import { PageContext } from 'vike/types';
 
-import { IBlog } from '../blog.types';
 import { blogs, blogSlug } from '../content';
 
 export const Page = ({ blog }: { blog: IBlog }) => {
@@ -23,4 +25,9 @@ export const onBeforeRender = (pageContext: PageContextBuiltIn) => ({
       blog: blogs.find((item) => pageContext.routeParams.id === blogSlug(item)),
     },
   },
+});
+
+export const getDocumentProps = (pageProps: PageProps) => ({
+  title: pageProps.blog?.title,
+  description: '',
 });

@@ -1,4 +1,4 @@
-import { IBlog } from './blog.types';
+import { IBlog } from '../../renderer/blog.types';
 
 const blogImport: Record<string, { default: IBlog }> = import.meta.glob(
   '../../content/blogs/*',
