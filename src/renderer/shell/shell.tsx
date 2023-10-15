@@ -18,7 +18,7 @@ export const Shell: React.FC<IShellProps> = ({ children, pageContext }) => (
     <Header
       className={styles.header}
       title={'TITLE LOL'}
-      icon={'/images/logo.png'}
+      icon={'images/logo.png'}
     />
     <Menu className={styles.menu} />
     <div className={styles.page}>{children}</div>
