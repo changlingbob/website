@@ -1,0 +1,1 @@
+import{j as r}from"../chunks/chunk-4d04ce61.js";/* empty css                      */const o=({is404:n})=>n?r.jsxs(r.Fragment,{children:[r.jsx("h1",{children:"404 Page Not Found"}),r.jsx("p",{children:"This page could not be found."})]}):r.jsxs(r.Fragment,{children:[r.jsx("h1",{children:"500 Internal Error"}),r.jsx("p",{children:"Something went wrong."})]});export{o as Page};
