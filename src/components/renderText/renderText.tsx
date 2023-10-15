@@ -23,9 +23,11 @@ export const RenderText: React.FC<IRenderTextProps> = ({
   fragments.forEach((fragment, index) =>
     output.push(
       index % 2 ? (
-        <span className={styles.mono}>{fragment}</span>
+        <span className={styles.mono} key={index}>
+          {fragment}
+        </span>
       ) : (
-        <>{fragment}</>
+        <React.Fragment key={index}>{fragment}</React.Fragment>
       )
     )
   );
