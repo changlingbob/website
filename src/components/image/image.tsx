@@ -16,7 +16,7 @@ export const Image: React.FC<IImageProps> = ({ className, cssVar, image }) => {
 
     return (
       <div className={classNames(className, styles.content)} style={cssVar}>
-        <img src={`${import.meta.env.BASE_URL}blog/${file}`} alt={alt} />
+        <img src={`${APP_CONFIG.BASE_URL}blog/${file}`} alt={alt} />
         <label>{caption}</label>
       </div>
     );

@@ -3,10 +3,15 @@ import react from '@vitejs/plugin-react';
 import { ssr } from 'vike/plugin';
 import path from 'path';
 
+const commitHash = require('child_process')
+  .execSync('git rev-parse --short HEAD')
+  .toString();
+
 export default ({ mode }) => {
   const isDevelopment = mode === 'development';
+  const base = isDevelopment ? '/' : '/website/';
   return defineConfig({
-    base: isDevelopment ? '/' : '/website/',
+    base,
     root: 'src',
     mode,
     publicDir: 'assets',
@@ -60,7 +65,10 @@ export default ({ mode }) => {
       },
     },
     define: {
-      APP_CONFIG: {},
+      APP_CONFIG: {
+        GIT_HASH: commitHash,
+        BASE_URL: base,
+      },
     },
   });
 };

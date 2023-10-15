@@ -1,3 +1,6 @@
 .footer {
   background: seagreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

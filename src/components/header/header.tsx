@@ -32,7 +32,7 @@ export const Header: React.FC<IHeaderProps> = ({ className, icon, title }) => {
 
   return (
     <div className={classNames(className, styles.header)}>
-      {icon && <img src={`${import.meta.env.BASE_URL}${icon}`} />}
+      {icon && <img src={`${APP_CONFIG.BASE_URL}${icon}`} />}
       <div className={styles.title}>{title}</div>
       <button onClick={hamburger} className={styles.hamburger}>
         {'\u276E'}
