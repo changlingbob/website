@@ -19,7 +19,13 @@ export const Page = ({ blog }: { blog: IBlog }) => {
       />
     );
 
-  return null;
+  return (
+    <>
+      <div>{blog.date}</div>
+      <div>{blog.title}</div>
+      {blog.content.map((item) => item)}
+    </>
+  );
 };
 
 export const onBeforeRender = (pageContext: PageContextBuiltIn) => ({
