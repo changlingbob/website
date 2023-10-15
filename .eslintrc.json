@@ -44,7 +44,7 @@
       "error",
       { "devDependencies": ["**/*.stories.tsx", "**/*.test.tsx"] }
     ],
-    "import/no-cycle": "off", // TODO: One day do this refactor
+    "import/no-cycle": "on",
     "import/order": "off",
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
