@@ -10,13 +10,16 @@ import { blogs, blogSlug } from '../content';
 export const Page = ({ blog }: { blog: IBlog }) => {
   console.log(blog);
 
-  return (
-    <>
-      <div>{blog.date}</div>
-      <div>{blog.title}</div>
-      <StandardPage content={blog.content} />
-    </>
-  );
+  if (blog.type === 'standard')
+    return (
+      <StandardPage
+        content={blog.content}
+        title={blog.title}
+        date={blog.date}
+      />
+    );
+
+  return null;
 };
 
 export const onBeforeRender = (pageContext: PageContextBuiltIn) => ({

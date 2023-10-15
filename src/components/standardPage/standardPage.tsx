@@ -1,18 +1,24 @@
 import * as React from 'react';
 
 import { Image } from '@components/image';
+import { RenderText } from '@components/renderText';
 
 import styles from './standardPage.module.scss';
 import classNames from 'classnames';
+import { BlogTitle } from '@components/blogTitle';
 
 export interface IStandardPageProps {
   className?: string;
   content: string[];
+  date: string;
+  title: string;
 }
 
 export const StandardPage: React.FC<IStandardPageProps> = ({
   className,
   content,
+  date,
+  title,
 }) => {
   const text: string[] = [];
   const images: { [index: number]: string } = {};
@@ -34,8 +40,8 @@ export const StandardPage: React.FC<IStandardPageProps> = ({
     }
 
     return {
-      '--grid-start': String(index + 1),
-      '--grid-end': String(end + 1),
+      '--grid-start': String(index + (index === 0 ? 1 : 2)),
+      '--grid-end': String(end + 2),
     };
   };
 
@@ -43,12 +49,14 @@ export const StandardPage: React.FC<IStandardPageProps> = ({
     <div className={classNames(className, styles.content)}>
       {text.map((item, index) => (
         <React.Fragment key={index}>
-          <div
+          {index === 0 && (
+            <BlogTitle className={styles.header} date={date} title={title} />
+          )}
+          <RenderText
             className={classNames(styles.text)}
-            style={{ '--grid-row': String(index + 1) } as React.CSSProperties}
-          >
-            {item}
-          </div>
+            cssVar={{ '--grid-row': String(index + 2) }}
+            text={item}
+          />
           {images[index] && (
             <Image
               className={classNames(styles.image)}

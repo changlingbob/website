@@ -1,7 +1,14 @@
+@use 'sass:color';
+
 $white: white;
 $yellow: yellow;
+$mono-bg: khaki;
+$mono-border: color.adjust($mono-bg, $lightness: -30%);
 
 // Fonts
+$font-header: 1.2rem;
+$font-smaller: 0.9rem;
 
 // Spacings
 $spacing-small: 0.75rem;
+$spacing-smaller: 0.25rem;

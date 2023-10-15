@@ -1,3 +1,5 @@
+@use '@theme/theme';
+
 $mobile-breakpoint: 900px;
 
 @mixin mobile {
@@ -10,4 +12,12 @@ $mobile-breakpoint: 900px;
   @media only screen and (min-width: $mobile-breakpoint) {
     @content;
   }
+}
+
+@mixin monotype {
+  font-family: 'Courier New', Courier, monospace;
+  background: theme.$mono-bg;
+  border: 1px solid theme.$mono-border;
+  border-radius: 3px;
+  padding: 0 2px;
 }

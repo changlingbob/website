@@ -1,0 +1,19 @@
+@use '@theme/mixins';
+@use '@theme/theme';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: theme.$spacing-small;
+
+  .title {
+    font-size: theme.$font-header;
+  }
+
+  .date {
+    font-size: theme.$font-smaller;
+    margin-right: theme.$spacing-smaller;
+  }
+}

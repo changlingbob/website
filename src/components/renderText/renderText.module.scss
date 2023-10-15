@@ -1,0 +1,6 @@
+@use '@theme/mixins';
+@use '@theme/theme';
+
+.mono {
+  @include mixins.monotype();
+}
