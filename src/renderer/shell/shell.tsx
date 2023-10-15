@@ -13,15 +13,15 @@ export type IShellProps = React.PropsWithChildren<{
   pageContext: PageContext;
 }>;
 
-export const Shell: React.FC<IShellProps> = ({ children, pageContext }) => {
-  console.log('hi');
-
-  return (
-    <div className={styles.content}>
-      <Header className={styles.header} title={'TITLE LOL'} />
-      <Menu className={styles.menu} />
-      <div className={styles.page}>{children}</div>
-      <Footer className={styles.footer} msg={'footer'} />
-    </div>
-  );
-};
+export const Shell: React.FC<IShellProps> = ({ children, pageContext }) => (
+  <div className={styles.shell}>
+    <Header
+      className={styles.header}
+      title={'TITLE LOL'}
+      icon={'/images/logo.png'}
+    />
+    <Menu className={styles.menu} />
+    <div className={styles.page}>{children}</div>
+    <Footer className={styles.footer} msg={'footer'} />
+  </div>
+);

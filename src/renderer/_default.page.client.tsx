@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { hydrateRoot } from 'react-dom/client';
 
+import 'normalize.css';
+import './globals.css';
+
 import { Shell } from './shell';
 import type { PageContextClient } from './types';
 

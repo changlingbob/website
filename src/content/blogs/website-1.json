@@ -1,0 +1,14 @@
+{
+  "date": "2023-10-15",
+  "title": "Making a website",
+  "type": "standard",
+  "content": [
+    "@blog1.png:In beautiful debug-o-vision:An early version of this website in garish colours",
+    "If you're reading this then I have succeeded, but as I'm writing it my website looks like this. To be fair, this is after a few weekends of work, and obviously several years of doing this for a living.",
+    "I have a lot of experience with websites, but i've never built (an interesting) one from scratch. Sure, as a kid I built some then-state-of-the-art raw html and css, but the industry has moved a little bit since then. Working as part of a team, I've gained lots of experience in building the actual content and layout, but basically haven't ever done any DevOps - and frankly, it doesn't spark joy. I don't really know how to host a node server, and I don't really know how to host a headless server. So I did what every good programmer should do, and ignored all of that in favour of just doing raw html and css (and js), but the complicated way.",
+    "As much as not having any javascript is appealing, sometimes you want some nice animations and realistically I want to write in React, as it's what I'm used to. Plus, I want things to be templatable, for example this (and all the other blog posts). To do that I'm using Vike, a static rendering framework for Vite, which is like Webpack but quick. Vite and typescript React is my standard stack for web, so having a SSR that uses that rather than having to totally change baseline is pretty good going by my counting.",
+    "As lovely as `pink`, `orange`, `yellow` and `seagreen` are, obviously the colours aren't final. I tend to dump random colours onto things so that I can figure out what's what, and figure out the actual look and feel later. Similarly, the font needs reviewing, and I imagine that I'll need to change sizings and spacings as well. One thing that won't need updating (much) is the left menu, which already responsively becomes a slide-in hamburger menu on mobile.",
+    "@logo.png:Text caption:Test alt text",
+    "And one of the reasons I wrote this blog post, was to test the blog rendering code - this is all json that gets loaded at compile time to spit out a page. I probably should have looked into markdown, but I want a bit more flexibility for layouts than markdown gives me. I'm going to pinch some of it's sytax for my own purposes though, when I eventually get to adding headings and suchlike. But for now, this is how the website looks."
+  ]
+}

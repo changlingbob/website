@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+import 'normalize.css';
+import './globals.css';
+
 export const Page = ({ is404 }: { is404: boolean }) => {
   if (is404) {
     return (

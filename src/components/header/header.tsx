@@ -17,7 +17,6 @@ export const Header: React.FC<IHeaderProps> = ({ className, icon, title }) => {
   const menuRef = React.useRef<HTMLDivElement>(null);
 
   const menuTransitionEnd = () => {
-    console.log('close!');
     setShowMenu(false);
     menuRef.current?.removeEventListener('transitionend', menuTransitionEnd);
   };

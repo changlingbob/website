@@ -9,6 +9,7 @@ export default ({ mode }) => {
     base: isDevelopment ? '/' : '/website/',
     root: 'src',
     mode,
+    publicDir: 'assets',
     plugins: [
       react({
         exclude: /test/,

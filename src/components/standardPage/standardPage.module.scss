@@ -1,0 +1,36 @@
+@use '@theme/mixins';
+@use '@theme/theme';
+
+@include mixins.desktop() {
+  .content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: theme.$spacing-small;
+
+    .text {
+      grid-column: 1;
+      grid-row: var(--grid-row);
+      margin-bottom: theme.$spacing-small;
+    }
+
+    .image {
+      grid-column: 2;
+      grid-row: var(--grid-start) / var(--grid-end);
+    }
+  }
+}
+
+@include mixins.mobile() {
+  .content {
+    display: grid;
+
+    > div {
+      margin-bottom: theme.$spacing-small;
+    }
+
+    .image {
+      justify-self: center;
+      text-align: center;
+    }
+  }
+}

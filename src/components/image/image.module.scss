@@ -1,0 +1,18 @@
+@use '@theme/mixins';
+@use '@theme/theme';
+
+.content {
+  display: grid;
+  grid-template-areas: 'img' 'label';
+  height: fit-content;
+  justify-items: center;
+
+  img {
+    grid-area: img;
+    max-width: 100%;
+  }
+
+  label {
+    grid-area: label;
+  }
+}

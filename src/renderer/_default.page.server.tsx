@@ -2,6 +2,9 @@
 import * as React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
+import 'normalize.css';
+import './globals.css';
+
 import { dangerouslySkipEscape, escapeInject } from 'vike/server';
 
 import { Shell } from './shell';
