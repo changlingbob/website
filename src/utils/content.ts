@@ -1,4 +1,6 @@
 import { IBlog } from '@renderer/blog.types';
+import { Page } from '@renderer/types';
+import { fileToLink, fileToUrl } from '@utils';
 
 const blogImport: Record<string, { default: IBlog }> = import.meta.glob(
   '../content/blogs/*',
@@ -16,9 +18,6 @@ export const blogSlug = (blog: IBlog) =>
     .replace(/[^ a-zA-Z]/g, '')
     .replace(/ /g, '-')
     .slice(0, 28)}`;
-
-import { Page } from '@renderer/types';
-import { fileToLink, fileToUrl } from '@utils';
 
 const contentImport: Record<string, { Page: Page }> = import.meta.glob(
   '../pages/**/index.page.tsx',

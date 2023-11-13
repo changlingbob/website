@@ -2,5 +2,5 @@
 @use '@theme/theme';
 
 .mono {
-  @include mixins.monotype();
+  @include mixins.monotype;
 }

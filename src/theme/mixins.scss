@@ -3,7 +3,7 @@
 $mobile-breakpoint: 900px;
 
 @mixin mobile {
-  @media only screen and (max-width: calc($mobile-breakpoint - 1px)) {
+  @media only screen and (width <= calc($mobile-breakpoint - 1px)) {
     @content;
   }
 }

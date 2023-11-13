@@ -1,11 +1,11 @@
 import * as React from 'react';
 
+import { BlogTitle } from '@components/blogTitle';
 import { Image } from '@components/image';
 import { RenderText } from '@components/renderText';
 
 import styles from './standardPage.module.scss';
 import classNames from 'classnames';
-import { BlogTitle } from '@components/blogTitle';
 
 export interface IStandardPageProps {
   className?: string;

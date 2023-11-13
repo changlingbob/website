@@ -3,9 +3,8 @@ import * as React from 'react';
 import { StandardPage } from '@components/standardPage';
 import { IBlog } from '@renderer/blog.types';
 import { PageProps } from '@renderer/types';
-import { PageContextBuiltIn } from 'vike';
-
 import { blogs, blogSlug } from '@utils';
+import { PageContextBuiltIn } from 'vike';
 
 export const Page = ({ blog }: { blog: IBlog }) => {
   console.log('blog contents:', blog);

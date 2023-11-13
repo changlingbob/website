@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { Menu } from '@components/menu';
+import { PageProps } from '@renderer/types';
 
 import styles from './header.module.scss';
 import classNames from 'classnames';
-import { PageProps } from '@renderer/types';
 
 export interface IHeaderProps {
   className?: string;

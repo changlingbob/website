@@ -1,7 +1,7 @@
 @use '@theme/mixins';
 @use '@theme/theme';
 
-@include mixins.desktop() {
+@include mixins.desktop {
   .content {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -25,7 +25,7 @@
   }
 }
 
-@include mixins.mobile() {
+@include mixins.mobile {
   .content {
     display: grid;
 
