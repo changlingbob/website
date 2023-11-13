@@ -4,14 +4,21 @@ import { Menu } from '@components/menu';
 
 import styles from './header.module.scss';
 import classNames from 'classnames';
+import { PageProps } from '@renderer/types';
 
 export interface IHeaderProps {
   className?: string;
   icon?: string;
   title: string;
+  pageProps?: PageProps;
 }
 
-export const Header: React.FC<IHeaderProps> = ({ className, icon, title }) => {
+export const Header: React.FC<IHeaderProps> = ({
+  className,
+  icon,
+  title,
+  pageProps,
+}) => {
   const [showMenu, setShowMenu] = React.useState(false);
   const [slideMenu, setSlideMenu] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
@@ -48,6 +55,7 @@ export const Header: React.FC<IHeaderProps> = ({ className, icon, title }) => {
           className={styles.menu}
           closeFunc={hamburger}
           ref={menuRef}
+          pageProps={pageProps}
         />
       </div>
     </div>

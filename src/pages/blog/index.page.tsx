@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { blogs, blogSlug } from './content';
+import { blogs, blogSlug } from '@utils';
 
 export const Page: React.FC = () => {
   console.log('blogs!');
@@ -8,13 +8,13 @@ export const Page: React.FC = () => {
   return (
     <div className={'hi'}>
       <h1>blogs!</h1>
-      <li>
+      <ul>
         {blogs.map((blog) => (
-          <ul key={blogSlug(blog)}>
+          <li key={blogSlug(blog)}>
             <a href={`blog/${blogSlug(blog)}`}>{blogSlug(blog)}</a>
-          </ul>
+          </li>
         ))}
-      </li>
+      </ul>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { blogs, blogSlug } from './content';
+import { blogs, blogSlug } from '@utils';
 
 export const prerender = () =>
   blogs.map((blog) => {

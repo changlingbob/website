@@ -5,10 +5,10 @@ import { IBlog } from '@renderer/blog.types';
 import { PageProps } from '@renderer/types';
 import { PageContextBuiltIn } from 'vike';
 
-import { blogs, blogSlug } from '../content';
+import { blogs, blogSlug } from '@utils';
 
 export const Page = ({ blog }: { blog: IBlog }) => {
-  console.log(blog);
+  console.log('blog contents:', blog);
 
   if (blog.type === 'standard')
     return (

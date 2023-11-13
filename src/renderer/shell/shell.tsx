@@ -19,8 +19,9 @@ export const Shell: React.FC<IShellProps> = ({ children, pageContext }) => (
       className={styles.header}
       title={'TITLE LOL'}
       icon={'images/logo.png'}
+      pageProps={pageContext.pageProps}
     />
-    <Menu className={styles.menu} />
+    <Menu className={styles.menu} pageProps={pageContext.pageProps} />
     <div className={styles.page}>{children}</div>
     <Footer className={styles.footer} msg={'footer'} />
   </div>

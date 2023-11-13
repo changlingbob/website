@@ -20,7 +20,8 @@
       "@theme/*": ["src/theme/*"],
       "@pages": ["src/pages/*"],
       "@renderer/*": ["src/renderer/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@utils": ["src/utils"]
     }
   },
   "files": ["./src/index.tsx"],

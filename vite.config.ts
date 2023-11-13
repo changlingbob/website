@@ -54,6 +54,10 @@ export default ({ mode }) => {
           find: '@components',
           replacement: path.resolve(__dirname, 'src/components'),
         },
+        {
+          find: '@utils',
+          replacement: path.resolve(__dirname, 'src/utils'),
+        },
       ],
     },
 
