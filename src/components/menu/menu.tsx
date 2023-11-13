@@ -1,9 +1,10 @@
 import * as React from 'react';
 
+import { PageProps } from '@renderer/types';
+import { blogs, blogSlug, pageMap } from '@utils';
+
 import styles from './menu.module.scss';
 import classNames from 'classnames';
-import { PageProps } from '@renderer/types';
-import { blogSlug, blogs, pageMap } from '@utils';
 
 export interface IMenuProps {
   className?: string;
@@ -50,6 +51,7 @@ export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
         {Object.keys(pageMap)
           .filter((key) => key.search('@') < 0)
           .sort((a, b) =>
+            // eslint-disable-next-line no-nested-ternary -- sort logic
             a === 'Home' ? -1 : b === 'Home' ? 1 : a.localeCompare(b)
           )
           .map(render)}
@@ -57,3 +59,5 @@ export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
     );
   }
 );
+
+Menu.displayName = 'Menu';

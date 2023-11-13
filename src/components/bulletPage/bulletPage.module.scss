@@ -1,0 +1,42 @@
+@use '@theme/mixins';
+@use '@theme/theme';
+
+@include mixins.desktop {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: theme.$spacing-small;
+    align-items: center;
+
+    .header {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    .text {
+      grid-column: var(--grid-column) / 3;
+      grid-row: var(--grid-row);
+      margin-bottom: theme.$spacing-small;
+    }
+
+    .image {
+      grid-column: 1;
+      grid-row: var(--grid-row);
+    }
+  }
+}
+
+@include mixins.mobile {
+  .content {
+    display: grid;
+
+    > div {
+      margin-bottom: theme.$spacing-small;
+    }
+
+    .image {
+      justify-self: center;
+      text-align: center;
+    }
+  }
+}

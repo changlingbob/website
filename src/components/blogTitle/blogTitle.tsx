@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 export interface IBlogTitleProps {
   className?: string;
-  date: string;
+  date?: string;
   title: string;
 }
 
