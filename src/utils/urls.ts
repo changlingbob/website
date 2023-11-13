@@ -9,4 +9,4 @@ export const fileToLink = (file: string) => {
 };
 
 export const fileToUrl = (file: string) =>
-  file.slice(9, -15) === 'index' ? '' : file.slice(9, -15);
+  file.slice(9, -15) === 'index' ? '/' : file.slice(9, -15);

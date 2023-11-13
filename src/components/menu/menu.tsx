@@ -25,7 +25,8 @@ export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
                 <ul>
                   {blogs.map((blog) => (
                     <li key={blog.date + blog.title}>
-                      <a href={`/blog/${blogSlug(blog)}`}>{blog.title}</a>
+                      {/* TODO: this doesn't always link to the right place */}
+                      <a href={`${blogSlug(blog)}`}>{blog.title}</a>
                     </li>
                   ))}
                 </ul>
@@ -35,7 +36,7 @@ export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
         default:
           return (
             <React.Fragment key={pageMap[key]}>
-              <a href={`/${pageMap[key]}`}>{key}</a>
+              <a href={`${pageMap[key]}`}>{key}</a>
               <br />
             </React.Fragment>
           );
@@ -57,5 +58,3 @@ export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
     );
   }
 );
-
-Menu.displayName = 'Menu';
