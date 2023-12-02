@@ -1,1 +1,0 @@
-import{j as o}from"../chunks/chunk-4d04ce61.js";const t=()=>(console.log("mionsters!"),o.jsx("div",{className:"hi",children:"i mak gam"})),e={title:"Gam",description:""};export{t as Page,e as documentProps};
