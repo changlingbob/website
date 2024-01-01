@@ -1,6 +1,7 @@
 import { IBlog } from '@renderer/blog.types';
 import { Page } from '@renderer/types';
-import { fileToLink, fileToUrl } from '@utils';
+
+import { fileToLink, fileToUrl } from './urls';
 
 const blogImport: Record<string, { default: IBlog }> = import.meta.glob(
   '../content/blogs/*',

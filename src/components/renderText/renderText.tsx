@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { parseText } from '@utils';
+
 import styles from './renderText.module.scss';
 import classNames from 'classnames';
 
@@ -18,23 +20,25 @@ export const RenderText: React.FC<IRenderTextProps> = ({
     return <h1>{text.slice(2)}</h1>;
   }
 
-  const fragments = text.split('`');
-  const output: React.ReactNode[] = [];
-  fragments.forEach((fragment, index) =>
-    output.push(
-      index % 2 ? (
-        <span className={styles.mono} key={index}>
-          {fragment}
-        </span>
-      ) : (
-        <React.Fragment key={index}>{fragment}</React.Fragment>
-      )
-    )
-  );
+  if (text.indexOf('*') > -1) {
+    const list = text.split(/ ?\* ?/);
+
+    return (
+      <div className={classNames(className)} style={cssVar}>
+        {parseText(list[0], styles)}
+        <ul>
+          {list.slice(1, -1).map((lineItem) => (
+            <li key={lineItem}>{parseText(lineItem, styles)}</li>
+          ))}
+        </ul>
+        {parseText(list[list.length - 1], styles)}
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(className)} style={cssVar}>
-      {output}
+      {parseText(text, styles)}
     </div>
   );
 };
