@@ -12,7 +12,7 @@ export const Footer: React.FC<IFooterProps> = ({ className, msg }) => (
   <div className={classNames(className, styles.footer)}>
     <div className={styles.msg}>{msg}</div>
     <div className={styles.hash}>
-      {APP_CONFIG.GIT_HASH} {import.meta.env.MODE}
+      {APP_CONFIG.GIT_HASH} {APP_CONFIG.MODE}
     </div>
   </div>
 );

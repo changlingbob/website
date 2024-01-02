@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { blogs, blogSlug } from '@utils';
+import { PageContextBuiltIn } from 'vike';
 
 export const Page: React.FC = () => {
   console.log('blogs!');
@@ -18,6 +19,14 @@ export const Page: React.FC = () => {
     </div>
   );
 };
+
+export const onBeforeRender = (pageContext: PageContextBuiltIn) => ({
+  pageContext: {
+    pageProps: {
+      blog: true,
+    },
+  },
+});
 
 export const documentProps = {
   title: 'Blog',

@@ -72,6 +72,7 @@ export default ({ mode }) => {
       APP_CONFIG: {
         GIT_HASH: commitHash,
         BASE_URL: base,
+        MODE: mode,
       },
     },
   });
