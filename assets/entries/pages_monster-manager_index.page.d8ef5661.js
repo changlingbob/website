@@ -1,1 +1,0 @@
-import{j as e}from"../chunks/chunk-4d04ce61.js";const o=()=>(console.log("mionsters!"),e.jsx("div",{className:"hi",children:"i mak gam"})),t={title:"Gam",description:""},s=Object.freeze(Object.defineProperty({__proto__:null,Page:o,documentProps:t},Symbol.toStringTag,{value:"Module"}));export{s as _};
