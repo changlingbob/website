@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { Link } from '@components/link/link';
 import { blogs, blogSlug } from '@utils';
 import { PageContextBuiltIn } from 'vike';
 
@@ -12,7 +13,7 @@ export const Page: React.FC = () => {
       <ul>
         {blogs.map((blog) => (
           <li key={blogSlug(blog)}>
-            <a href={`blog/${blogSlug(blog)}`}>{blogSlug(blog)}</a>
+            <Link href={`blog/${blogSlug(blog)}`}>{blogSlug(blog)}</Link>
           </li>
         ))}
       </ul>
