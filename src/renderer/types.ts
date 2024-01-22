@@ -10,19 +10,20 @@ export type PageProps = {
 };
 export type Page = (pageProps: PageProps) => React.ReactElement;
 
+export interface IMetaData {
+  title?: string;
+  description?: string;
+  img?: string;
+  alt?: string;
+}
+
 export type PageContextCustom = {
   Page: Page;
   pageProps?: PageProps;
   urlPathname: string;
   exports: {
-    documentProps?: {
-      title?: string;
-      description?: string;
-    };
-    getDocumentProps?: (pageProps: PageProps) => {
-      title?: string;
-      description?: string;
-    };
+    documentProps?: IMetaData;
+    getDocumentProps?: (pageProps: PageProps) => IMetaData;
   };
 };
 
