@@ -4,11 +4,12 @@ import { hydrateRoot } from 'react-dom/client';
 import 'normalize.css';
 import './globals.css';
 
+import { PageContextState } from './context';
 import { Shell } from './shell';
 import type { PageContextClient } from './types';
 
 // This render() hook only supports SSR, see https://vike.dev/render-modes for how to modify render() to support SPA
-export const render = async (pageContext: PageContextClient) => {
+export const onRenderClient = async (pageContext: PageContextClient) => {
   const { Page, pageProps } = pageContext;
 
   if (!Page) {
@@ -25,10 +26,10 @@ export const render = async (pageContext: PageContextClient) => {
 
   hydrateRoot(
     root,
-    <Shell pageContext={pageContext}>
-      <Page {...pageProps} />
-    </Shell>
+    <PageContextState.Provider value={pageContext}>
+      <Shell pageContext={pageContext}>
+        <Page {...pageProps} />
+      </Shell>
+    </PageContextState.Provider>
   );
 };
-
-export const clientRouting = true;

@@ -55,7 +55,6 @@ export const Header: React.FC<IHeaderProps> = ({
           className={styles.menu}
           closeFunc={hamburger}
           ref={menuRef}
-          pageProps={pageProps}
         />
       </div>
     </div>

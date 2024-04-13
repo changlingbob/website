@@ -1,12 +1,9 @@
-export const fileToLink = (file: string) => {
-  const link = file
-    .slice(9, -15)
+export const urlToLink = (url: string) =>
+  url
+    .split('/')
+    .slice(-1)[0]
     .split('-')
-    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .map((part) =>
+      part !== 'index' ? part[0].toUpperCase() + part.slice(1) : 'Home'
+    )
     .join(' ');
-
-  return link === 'Index' ? 'Home' : link;
-};
-
-export const fileToUrl = (file: string) =>
-  file.slice(9, -15) === 'index' ? '/' : file.slice(9, -15);

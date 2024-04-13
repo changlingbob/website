@@ -7,12 +7,13 @@ import './globals.css';
 
 import { dangerouslySkipEscape, escapeInject } from 'vike/server';
 
+import { PageContextState } from './context';
 import { Shell } from './shell';
 import type { IMetaData, PageContextServer } from './types';
 
 export const passToClient = ['pageProps', 'urlPathname'];
 
-export const render = async (pageContext: PageContextServer) => {
+export const onRenderHtml = async (pageContext: PageContextServer) => {
   const { Page, pageProps } = pageContext;
 
   // This render() hook only supports SSR, see https://vike.dev/render-modes for how to modify render() to support SPA
@@ -21,9 +22,11 @@ export const render = async (pageContext: PageContextServer) => {
   }
 
   const pageHtml = ReactDOMServer.renderToString(
-    <Shell pageContext={pageContext}>
-      <Page {...pageProps} />
-    </Shell>
+    <PageContextState.Provider value={pageContext}>
+      <Shell pageContext={pageContext}>
+        <Page {...pageProps} />
+      </Shell>
+    </PageContextState.Provider>
   );
 
   // See https://vike.dev.com/head
@@ -43,7 +46,7 @@ export const render = async (pageContext: PageContextServer) => {
       <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' style-src 'unsafe-inline'">
       <meta name="google" content="nositelinkssearchbox">
       <link rel="icon" sizes="192x192" href="${
         APP_CONFIG.BASE_URL

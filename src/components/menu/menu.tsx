@@ -1,8 +1,10 @@
 import * as React from 'react';
 
 import { Link } from '@components/link/link';
+import { IBlog } from '@renderer/blog.types';
+import { PageContextState } from '@renderer/context';
 import { PageProps } from '@renderer/types';
-import { blogs, blogSlug, pageMap } from '@utils';
+import { blogs, blogSlug, IMenuLink, menuKeys } from '@utils';
 
 import styles from './menu.module.scss';
 import classNames from 'classnames';
@@ -14,30 +16,36 @@ export interface IMenuProps {
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
-  ({ className, closeFunc, pageProps, ...rest }, ref) => {
-    console.log('menu content', pageMap, pageProps?.blog);
-    const render = (key: string) => {
-      switch (key) {
-        case 'Blog':
+  ({ className, closeFunc, ...rest }, ref) => {
+    const { pageProps, urlPathname } = React.useContext(PageContextState);
+
+    const render = (link: IMenuLink) => {
+      switch (link.url) {
+        case 'blog':
           return (
-            <React.Fragment key={pageMap[key]}>
-              <Link href={`${pageMap[key]}`}>{key}</Link>
+            <React.Fragment key={link.url}>
+              <Link href={`${link.url}`}>{link.link}</Link>
               <br />
               {pageProps?.blog && (
                 <ul>
-                  {blogs.map((blog) => (
-                    <li key={blog.date + blog.title}>
-                      <Link href={`blog/${blogSlug(blog)}`}>{blog.title}</Link>
-                    </li>
-                  ))}
+                  {blogs.map(
+                    (blog: IBlog) =>
+                      new Date(blog.date).getTime() < new Date().getTime() && (
+                        <li key={blog.date + blog.title}>
+                          <Link href={`blog/${blogSlug(blog)}`}>
+                            {blog.title}
+                          </Link>
+                        </li>
+                      )
+                  )}
                 </ul>
               )}
             </React.Fragment>
           );
         default:
           return (
-            <React.Fragment key={pageMap[key]}>
-              <Link href={`${pageMap[key]}`}>{key}</Link>
+            <React.Fragment key={link.url}>
+              <Link href={`${link.url}`}>{link.link}</Link>
               <br />
             </React.Fragment>
           );
@@ -49,13 +57,7 @@ export const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(
         <div className={styles.header}>
           {closeFunc && <button onClick={closeFunc}>X</button>}
         </div>
-        {Object.keys(pageMap)
-          .filter((key) => key.search('@') < 0)
-          .sort((a, b) =>
-            // eslint-disable-next-line no-nested-ternary -- sort logic
-            a === 'Home' ? -1 : b === 'Home' ? 1 : a.localeCompare(b)
-          )
-          .map(render)}
+        {menuKeys(urlPathname.split('/')[1]).map(render)}
       </div>
     );
   }
